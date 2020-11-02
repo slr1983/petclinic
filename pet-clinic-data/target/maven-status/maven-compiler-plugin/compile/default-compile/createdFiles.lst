@@ -1,0 +1,5 @@
+com\sumit\petclinic\model\Pet.class
+com\sumit\petclinic\model\Owner.class
+com\sumit\petclinic\model\PetType.class
+com\sumit\petclinic\model\Person.class
+com\sumit\petclinic\model\Vet.class
