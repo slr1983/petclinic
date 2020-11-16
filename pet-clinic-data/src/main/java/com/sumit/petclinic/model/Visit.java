@@ -8,6 +8,11 @@ import java.time.LocalDate;
  */
 public class Visit extends BaseEntity {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2512908735945716444L;
+
 	private LocalDate date;
 
 	private String description;
