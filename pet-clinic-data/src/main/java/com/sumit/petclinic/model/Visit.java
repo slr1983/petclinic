@@ -2,10 +2,17 @@ package com.sumit.petclinic.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 /**
  * Simple JavaBean domain object representing a visit.
 
  */
+@Entity
+@Table(name = "scheduled_visits")
 public class Visit extends BaseEntity {
 
 	/**
@@ -17,6 +24,8 @@ public class Visit extends BaseEntity {
 
 	private String description;
 
+	@ManyToOne
+	@JoinColumn(name = "pet_id")
 	private Pet pet;
 
 	/**
