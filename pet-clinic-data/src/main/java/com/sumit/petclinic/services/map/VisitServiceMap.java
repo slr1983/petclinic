@@ -2,13 +2,14 @@ package com.sumit.petclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.sumit.petclinic.model.Visit;
-import com.sumit.petclinic.services.PetService;
 import com.sumit.petclinic.services.VisitService;
 
 @Service
+@Profile({"default", "map"})
 public class VisitServiceMap extends AbstractMapService<Visit, Long> implements VisitService {
 
 	@Override
@@ -25,8 +26,7 @@ public class VisitServiceMap extends AbstractMapService<Visit, Long> implements 
 	@Override
 	public Visit save(Visit object) {
 
-		if (object == null || object.getPet() == null || object.getPet().getOwner() == null
-				|| object.getPet().getId() == null || object.getPet().getOwner().getId() == null) {
+		if (object == null || object.getPet() == null || object.getPet().getId() == null) {
 
 			throw new RuntimeException("Invalid Data. Pet not saved or Pet doesnt have any Owner attached...");
 		}
